@@ -1,0 +1,89 @@
+{
+  "app": {
+    "title": "تطبيق الطباعة",
+    "language": "English"
+  },
+  "nav": {
+    "queue": "قائمة الملفات",
+    "printers": "الطابعات",
+    "jobs": "المهام",
+    "preview": "معاينة الكتيب",
+    "settings": "الإعدادات",
+    "license": "الترخيص"
+  },
+  "files": {
+    "add": "إضافة ملفات",
+    "empty": "لا توجد ملفات. أضف ملف PDF للبدء.",
+    "pageCount": "{{count}} صفحة",
+    "ready": "جاهز",
+    "pending": "معالجة…",
+    "failed": "فشل",
+    "remove": "حذف"
+  },
+  "printers": {
+    "refresh": "تحديث",
+    "empty": "لم يتم العثور على طابعات مثبتة",
+    "online": "متصلة",
+    "offline": "غير متصلة",
+    "unknown": "غير معروف",
+    "select": "اختر طابعة"
+  },
+  "jobs": {
+    "create": "إنشاء مهمة طباعة",
+    "copies": "عدد النسخ",
+    "booklet": "طباعة على شكل كتيب",
+    "start": "بدء الطباعة",
+    "cancel": "إلغاء",
+    "retry": "إعادة المحاولة",
+    "status": {
+      "queued": "في الانتظار",
+      "preparing": "قيد التحضير",
+      "ready": "جاهز",
+      "printing": "جاري الطباعة",
+      "done": "مكتمل",
+      "partial": "نجاح جزئي",
+      "error": "فشل",
+      "cancelled": "ملغى",
+      "interrupted": "متوقف"
+    },
+    "distribution": "توزيع النسخ",
+    "childStatus": {
+      "queued": "في الانتظار",
+      "printing": "جاري الطباعة",
+      "done": "تمت",
+      "failed": "فشلت",
+      "cancelled": "ملغاة"
+    }
+  },
+  "preview": {
+    "title": "معاينة الكتيب",
+    "sheet": "ورقة {{current}} من {{total}}",
+    "front": "الأمامي",
+    "back": "الخلفي",
+    "empty": "سيتم عرض الكتيب هنا بعد إنشائه"
+  },
+  "settings": {
+    "language": "اللغة",
+    "arabicDigits": "أرقام عربية (٠١٢٣)",
+    "libreOfficePath": "مسار LibreOffice"
+  },
+  "license": {
+    "title": "الترخيص",
+    "machineId": "معرّف الجهاز",
+    "state": "الحالة",
+    "expiresAt": "تاريخ الانتهاء",
+    "activate": "تفعيل",
+    "pasteLicense": "الصق محتوى ملف الترخيص",
+    "states": {
+      "active": "مفعّل",
+      "expiring": "قرب الانتهاء",
+      "expired": "منتهي",
+      "not-activated": "غير مفعّل",
+      "invalid": "غير صالح"
+    }
+  },
+  "common": {
+    "close": "إغلاق",
+    "ok": "موافق"
+  }
+}
