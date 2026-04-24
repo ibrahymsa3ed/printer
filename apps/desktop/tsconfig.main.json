@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist/main",
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@main/*": ["src/main/*"],
+      "@shared/*": ["../../packages/shared/src/*"],
+      "@appname/shared": ["../../packages/shared/src"]
+    }
+  },
+  "include": ["src/main/**/*", "src/preload/**/*", "../../packages/shared/src/**/*"]
+}

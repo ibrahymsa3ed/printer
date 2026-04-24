@@ -1,0 +1,89 @@
+{
+  "app": {
+    "title": "<AppName>",
+    "language": "العربية"
+  },
+  "nav": {
+    "queue": "Queue",
+    "printers": "Printers",
+    "jobs": "Jobs",
+    "preview": "Booklet preview",
+    "settings": "Settings",
+    "license": "License"
+  },
+  "files": {
+    "add": "Add files",
+    "empty": "No files. Add a PDF to get started.",
+    "pageCount": "{{count}} pages",
+    "ready": "Ready",
+    "pending": "Processing…",
+    "failed": "Failed",
+    "remove": "Remove"
+  },
+  "printers": {
+    "refresh": "Refresh",
+    "empty": "No installed printers found",
+    "online": "Online",
+    "offline": "Offline",
+    "unknown": "Unknown",
+    "select": "Select a printer"
+  },
+  "jobs": {
+    "create": "Create print job",
+    "copies": "Copies",
+    "booklet": "Print as booklet",
+    "start": "Start printing",
+    "cancel": "Cancel",
+    "retry": "Retry",
+    "status": {
+      "queued": "Queued",
+      "preparing": "Preparing",
+      "ready": "Ready",
+      "printing": "Printing",
+      "done": "Done",
+      "partial": "Partial",
+      "error": "Failed",
+      "cancelled": "Cancelled",
+      "interrupted": "Interrupted"
+    },
+    "distribution": "Copy distribution",
+    "childStatus": {
+      "queued": "Queued",
+      "printing": "Printing",
+      "done": "Done",
+      "failed": "Failed",
+      "cancelled": "Cancelled"
+    }
+  },
+  "preview": {
+    "title": "Booklet preview",
+    "sheet": "Sheet {{current}} of {{total}}",
+    "front": "Front",
+    "back": "Back",
+    "empty": "The booklet will appear here once generated"
+  },
+  "settings": {
+    "language": "Language",
+    "arabicDigits": "Arabic-Indic digits (٠١٢٣)",
+    "libreOfficePath": "LibreOffice path"
+  },
+  "license": {
+    "title": "License",
+    "machineId": "Machine ID",
+    "state": "Status",
+    "expiresAt": "Expires",
+    "activate": "Activate",
+    "pasteLicense": "Paste license file content",
+    "states": {
+      "active": "Active",
+      "expiring": "Expiring",
+      "expired": "Expired",
+      "not-activated": "Not activated",
+      "invalid": "Invalid"
+    }
+  },
+  "common": {
+    "close": "Close",
+    "ok": "OK"
+  }
+}
