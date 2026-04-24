@@ -7,6 +7,18 @@
 
 ---
 
+## Commercial Readiness Statement (read first)
+
+> **The product is not commercially usable until multi-printer parallel printing ships.**
+>
+> - **Phase 1** is an internal technical proof. **Do not ship externally.** Single-printer is acceptable *only* as a pipeline validation step.
+> - **Phase 1.5 — "Commercial Minimum"** is the first sellable build. It adds: multi-printer selection, copy splitting, concurrent parallel dispatch, per-printer child-job tracking, partial-success handling, and per-printer independent retry.
+> - Basic booklet preview is in the commercial MVP (Phase 1.5), not a deferred polish.
+> - Manual printers are out of the commercial MVP entirely — system-installed printers are the only active source through Phase 1 and Phase 1.5.
+> - Advanced preview controls, file conversion, licensing, and network printers come in Phases 2 and 3.
+
+---
+
 ## 0. Assumptions & Open Questions
 
 | # | Assumption | Risk if wrong |
@@ -375,9 +387,9 @@ SumatraPDF.exe -print-to "<PrinterName>" ^
 
 ### 5.4 Printer sources
 
-**MVP (Phase 1 and 1.5): system-installed printers only.** Enumerated via WMI `Win32_Printer` at startup and on-demand. Capability probing via `Get-PrintConfiguration` + WMI. Unknown capabilities → `capabilities = null`, UI trusts the driver and shows a one-time "capabilities unknown" banner.
+**MVP (Phase 1 and 1.5): system-installed printers are the only active printer source.** Enumerated via WMI `Win32_Printer` at startup and on-demand. Capability probing via `Get-PrintConfiguration` + WMI. Unknown capabilities → `capabilities = null`, UI trusts the driver and shows a one-time "capabilities unknown" banner.
 
-**Manual printers (IP + port) are explicitly out of the MVP UI.** They cannot reliably print without Phase 3's IPP path, so we do not show a "manual printer" affordance in the user-facing Phase 1/1.5 builds. The data model is forward-compatible (`source: 'system' | 'manual'` as a union) so Phase 3 adds manual support without a schema change, but the MVP UI does not expose it — avoiding the trap of a visible-but-broken feature.
+**Manual printers are out of the MVP entirely — scope, UI, and active code paths.** They cannot reliably print without Phase 3's IPP implementation, so we do not ship a "manual printer" affordance in Phase 1 or Phase 1.5. The data model keeps the door open (`source: 'system' | 'manual'` as a union) so Phase 3 adds manual support without a schema change, but the MVP surface does not expose it — avoiding the trap of a visible-but-broken feature.
 
 Discovery (mDNS / IPP browsing) is a Phase 3 helper, not a primary mechanism.
 
@@ -742,17 +754,17 @@ Reason for `writer_pdf_Export`: deterministic PDF output across formats. Timeout
 
 > **Only Phase 1.5 is sellable.** Phase 1 is an internal proof step.
 
-### Phase 1 — Core Proof (internal only)
+### Phase 1 — Core Proof (internal validation only — **NOT SHIPPABLE**)
 Scope:
 - PDF-only file queue (no conversion yet).
-- System-installed printers (no manual).
-- SumatraPDF printing to one printer.
+- System-installed printers only (no manual).
+- SumatraPDF printing to a **single** printer.
 - Arabic-first RTL UI with English toggle.
 - Booklet generation (imposition).
-- Basic booklet preview (one sheet at a time, actual imposed PDF).
+- Basic booklet preview (one sheet at a time, reads the actual imposed PDF).
 - SQLite job history + crash recovery.
 
-**Not shipped externally.** Single-printer only is acceptable here *solely* as a proof that the print pipeline works end-to-end.
+**Do not distribute externally.** The product is not commercially usable at this phase. Single-printer printing is acceptable here *solely* as a proof that the conversion → impose → dispatch pipeline works end-to-end.
 
 **Exit criteria:** 50 single-printer PDF jobs without temp/process leaks. Booklet output matches spec for N=8, 12, 24. Basic preview shows imposed pages correctly.
 
